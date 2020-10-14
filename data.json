@@ -1,0 +1,4 @@
+{
+	"cert": "path to certificate.crt",
+	"certKey": "path to certificate.key"
+}

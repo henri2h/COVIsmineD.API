@@ -1,0 +1,30 @@
+{
+  "name": "remotecontrolserver",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node -r esm index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Henri2h/RemoteControlServer.git"
+  },
+  "author": "henri2h",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Henri2h/RemoteControlServer/issues"
+  },
+  "homepage": "https://github.com/Henri2h/RemoteControlServer#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.0",
+    "esm": "^3.2.25",
+    "express": "^4.17.1",
+    "sqlite3": "^4.1.1"
+  },
+  "devDependencies": {
+    "json-colorizer": "^2.2.2",
+    "winston": "^3.2.1"
+  }
+}
