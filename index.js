@@ -37,6 +37,12 @@ app.get("/news", (req, res, next) => {
     db.all(sql, (err, rows) => queryCallback(err, rows, res));
 });
 
+app.get("/cas", (req, res, next) => {
+    var sql = "select count() from news";
+    db.all(sql, (err, rows) => queryCallback(err, rows, res));
+});
+
+
 app.post("/addnews", (req, res, next) => {
     var sql = "INSERT INTO news (title, content, date, author) VALUES (?, ?, ?, ?)";
 
