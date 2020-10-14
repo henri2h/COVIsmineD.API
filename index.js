@@ -56,7 +56,7 @@ app.post("/addnews", (req, res, next) => {
     db.run(sql, params, (err, rows) => queryCallback(err, rows, res));
 });
 app.post("/updatenews", (req, res, next) => {
-    var sql = "update news  where id =? set title = ?, content = ?, date = ?, author = ?";
+    var sql = "update news   set title = ?, content = ?, date = ?, author = ? where id =?";
 
     // get username
     var username = req.body.username;
