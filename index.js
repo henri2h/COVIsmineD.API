@@ -33,7 +33,7 @@ setDatabase(db);
 
 // news
 app.get("/news", (req, res, next) => {
-    var sql = "select * from news order by desc";
+    var sql = "select * from news order by date desc";
     db.all(sql, (err, rows) => queryCallback(err, rows, res));
 });
 
