@@ -19,6 +19,7 @@
   "homepage": "https://github.com/Henri2h/RemoteControlServer#readme",
   "dependencies": {
     "bcrypt": "^5.0.0",
+    "cors": "^2.8.5",
     "esm": "^3.2.25",
     "express": "^4.17.1",
     "sqlite3": "^4.1.1"
