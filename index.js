@@ -56,7 +56,7 @@ app.post("/addnews", (req, res, next) => {
     db.run(sql, params, (err, rows) => queryCallback(err, rows, res));
 });
 app.post("/updatenews", (req, res, next) => {
-    var sql = "update news (title, content, date, author) whre id =? VALUES (?, ?, ?, ?)";
+    var sql = "update news  whre id =? set title = ?, content = ?, date = ?, author = ?";
 
     // get username
     var username = req.body.username;
@@ -69,7 +69,7 @@ app.post("/updatenews", (req, res, next) => {
 });
 
 app.post("/deletenews", (req, res, next) => {
-    var sql = "delete news whre id =?";
+    var sql = "delete from news whre id =?";
     var params = [req.body.id];
     db.run(sql, params, (err, rows) => queryCallback(err, rows, res));
 });
