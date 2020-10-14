@@ -76,7 +76,7 @@ export function createExpress(logger) {
     // adding logging in express
     var securityCheck = function (req, res, next) {
         // exceptions : 
-        if (req.url == "/news" || req.url == "/signup" || req.url == "/login" || req.url == "/getlevels") {
+        if (req.url == "/news" || req.url == "/signup" || req.url == "/login" || req.url == "/getlevels" || req.url == "/cas") {
             next();
         }
         // check if token is valid
