@@ -1,4 +1,5 @@
 import fs from "fs";
+import { networkInterfaces } from "os";
 
 var express = require("express");
 
@@ -18,13 +19,15 @@ export function isTokenValid(username, token, next) {
         if (err) {
             logger.error(err);
         }
-        if (result[0].token == token) {
-            next(true);
+        if (result[0] !== undefined) {
+            if (result[0].token == token) {
+                next(true);
+            }
+            else {
+                next(false);
+            }
         }
-        else {
-            next(false);
-        }
-
+        else { next(false); }
     });
 }
 
