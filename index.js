@@ -55,6 +55,26 @@ app.post("/addnews", (req, res, next) => {
     var params = [req.body.title, req.body.content, date, req.body.username];
     db.run(sql, params, (err, rows) => queryCallback(err, rows, res));
 });
+app.post("/updatenews", (req, res, next) => {
+    var sql = "update news (title, content, date, author) whre id =? VALUES (?, ?, ?, ?)";
+
+    // get username
+    var username = req.body.username;
+    // TODO : check if the username should have access to this computer (device_id)
+
+    var date = new Date().getTime().toString(); // get time
+
+    var params = [req.body.id, req.body.title, req.body.content, date, req.body.username];
+    db.run(sql, params, (err, rows) => queryCallback(err, rows, res));
+});
+
+app.post("/deletenews", (req, res, next) => {
+    var sql = "delete news whre id =?";
+    var params = [req.body.id];
+    db.run(sql, params, (err, rows) => queryCallback(err, rows, res));
+});
+
+
 
 
 
