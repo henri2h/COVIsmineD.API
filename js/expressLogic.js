@@ -4,9 +4,7 @@ import { networkInterfaces } from "os";
 var express = require("express");
 
 // enable cors
-var cors = require('cors')
-express.use(cors());
-
+var cors = require('cors');
 var http = require("http");
 var https = require("https");
 
@@ -65,7 +63,7 @@ export function queryCallback(err, rows, res) {
 
 export function createExpress(logger) {
     var app = express();
-
+    app.use(cors());
     // creating express logic
     const bodyParser = require("body-parser");
     app.use(
