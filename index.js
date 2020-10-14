@@ -38,7 +38,7 @@ app.get("/news", (req, res, next) => {
 });
 
 app.get("/cas", (req, res, next) => {
-    var sql = "select count() as cas from news";
+    var sql = "select count(*) as cas from news";
     db.all(sql, (err, rows) => queryCallback(err, rows, res));
 });
 
