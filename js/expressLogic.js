@@ -3,6 +3,10 @@ import { networkInterfaces } from "os";
 
 var express = require("express");
 
+// enable cors
+var cors = require('cors')
+express.use(cors());
+
 var http = require("http");
 var https = require("https");
 
