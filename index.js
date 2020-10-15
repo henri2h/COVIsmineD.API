@@ -107,9 +107,9 @@ app.post("/login", (req, res, next) => {
             setError(err, res);
         }
         console.log(result);
-        
-        if (result !== undefined && result[0]["passwordhash"] != undefined && req.body.password != undefined ) {
-            
+
+        if (result !== undefined && result[0]["passwordhash"] != undefined && req.body.password != undefined) {
+
             bcrypt.compare(req.body.password, result[0]["passwordhash"]).then(function (match) {
                 if (match) {
                     res.json({
@@ -125,6 +125,12 @@ app.post("/login", (req, res, next) => {
                 }
             });;
 
+        }
+        else {
+            res.json({
+                "message": "failed",
+                "reason": "request failed"
+            });
         }
 
     });
