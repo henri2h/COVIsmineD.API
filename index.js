@@ -56,7 +56,7 @@ app.post("/addnews", (req, res, next) => {
     db.run(sql, params, (err, rows) => queryCallback(err, rows, res));
 });
 app.post("/updatenews", (req, res, next) => {
-    var sql = "update news   set title = ?, content = ?, date = ?, author = ? where id =?";
+    var sql = "update news   set title = ?, content = ?, author = ? where id =?";
 
     // get username
     var username = req.body.username;
@@ -64,7 +64,7 @@ app.post("/updatenews", (req, res, next) => {
 
     var date = new Date().getTime().toString(); // get time
 
-    var params = [req.body.id, req.body.title, req.body.content, date, req.body.username];
+    var params = [req.body.title, req.body.content, req.body.username, req.body.id];
     db.run(sql, params, (err, rows) => queryCallback(err, rows, res));
 });
 
