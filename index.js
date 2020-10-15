@@ -69,7 +69,7 @@ app.post("/updatenews", (req, res, next) => {
 });
 
 app.post("/deletenews", (req, res, next) => {
-    var sql = "delete from news whre id =?";
+    var sql = "delete from news where id =?";
     var params = [req.body.id];
     db.run(sql, params, (err, rows) => queryCallback(err, rows, res));
 });
