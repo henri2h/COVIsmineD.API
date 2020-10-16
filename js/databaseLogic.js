@@ -13,7 +13,7 @@ export function createDatabase(logger) {
     db.serialize(function () {
         // create table devices
         // device id : autommaticaly generated id for the device (UUID) : prevent other people form firguring out too easly
-        db.run("CREATE TABLE if not exists Users (id INTEGER NOT NULL PRIMARY KEY, username TEXT UNIQUE, passwordhash TEXT, power NOT NULL INTEGER, level NOT NULL INTEGER, token text)");
+        db.run("CREATE TABLE if not exists Users (id INTEGER NOT NULL PRIMARY KEY, username NOT NULL TEXT UNIQUE, name TEXT, last name, passwordhash TEXT, power NOT NULL INTEGER, level NOT NULL INTEGER, token text, admin integer)");
 
         // create table commands
         // device name : id of the computer host

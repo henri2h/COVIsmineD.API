@@ -77,6 +77,7 @@ export function createExpress(logger) {
     var securityCheck = function (req, res, next) {
         // exceptions : 
         if (req.url == "/news" || req.url == "/signup" || req.url == "/login" || req.url == "/getlevels" || req.url == "/cas") {
+            logger.info(req.ip + " unauth : " + req.url);
             next();
         }
         // check if token is valid
