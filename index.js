@@ -108,7 +108,7 @@ app.post("/login", (req, res, next) => {
         }
         console.log(result);
 
-        if (result !== undefined && result[0]["passwordhash"] != undefined && req.body.password != undefined) {
+        if (result !== undefined && result.length > 0 && req.body.password != undefined) {
 
             bcrypt.compare(req.body.password, result[0]["passwordhash"]).then(function (match) {
                 if (match) {
